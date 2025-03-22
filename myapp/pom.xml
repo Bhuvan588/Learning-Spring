@@ -52,6 +52,13 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
+		<!--Spring security to secure endpoints which are exposed bsy actuator-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+
 
 		<!-- Spring Boot Test -->
 		<dependency>
