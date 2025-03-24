@@ -2,6 +2,7 @@ package com.example.springboot.demo.myapp;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,8 +11,18 @@ public class CourseController {
 
     private Instructor myInstructor;
 
+
+    //Setter injection
+//    @Autowired
+//    public void setInstructor(Instructor instructor)
+//    {
+//        myInstructor=instructor;
+//    }
+
+
+
     @Autowired
-    public CourseController(Instructor myInstructor) {
+    public CourseController(@Qualifier("pythonInstructor")Instructor myInstructor) {
         this.myInstructor = myInstructor;
     }
 
