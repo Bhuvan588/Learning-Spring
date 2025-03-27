@@ -19,10 +19,9 @@ public class CourseController {
 //        myInstructor=instructor;
 //    }
 
-
-
     @Autowired
     public CourseController(@Qualifier("pythonInstructor")Instructor myInstructor) {
+        System.out.println("Hello from Course Controller!!");
         this.myInstructor = myInstructor;
     }
 
