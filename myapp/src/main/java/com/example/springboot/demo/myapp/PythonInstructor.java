@@ -14,19 +14,6 @@ public class PythonInstructor implements Instructor {
     public PythonInstructor() {
         System.out.println("PythonInstructor initialized!!");
     }
-
-    @PostConstruct
-    public void initCode()
-    {
-        System.out.println("Starting custom logic...");
-    }
-
-    @PreDestroy
-    public void cleanUpCode()
-    {
-        System.out.println("Cleaning up code....");
-    }
-
     @Override
     public String getProgrammingExercises() {
         return "Hello from Python Instructor!!";

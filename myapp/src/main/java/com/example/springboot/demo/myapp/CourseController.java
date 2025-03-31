@@ -10,22 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class CourseController {
 
     private Instructor myInstructor;
-    private Instructor anotherInstructor;
+    //private Instructor anotherInstructor;
 
 
-    //Setter injection
-//    @Autowired
-//    public void setInstructor(Instructor instructor)
-//    {
-//        myInstructor=instructor;
-//    }
 
     @Autowired
-    public CourseController(@Qualifier("pythonInstructor")Instructor myInstructor,
-                            @Qualifier("pythonInstructor") Instructor anotherInstructor) {
+    public CourseController(@Qualifier("CProgram")Instructor myInstructor) {
         System.out.println("Hello from Course Controller!!");
         this.myInstructor = myInstructor;
-        this.anotherInstructor=anotherInstructor;
+        //this.anotherInstructor=anotherInstructor;
     }
 
     @GetMapping("/programmingexercise")
@@ -35,8 +28,8 @@ public class CourseController {
     }
 
 
-    @GetMapping("/check")
-    public String check(){
-        return "Comparing beans: myInstructor==anotherInstructor, " + (myInstructor==anotherInstructor);
-    }
+//    @GetMapping("/check")
+//    public String check(){
+//        return "Comparing beans: myInstructor==anotherInstructor, " + (myInstructor==anotherInstructor);
+//    }
 }
